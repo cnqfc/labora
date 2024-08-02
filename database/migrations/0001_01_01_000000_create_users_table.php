@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('document')->nullable();
             $table->string('document_type')->nullable();
+            $table->string('gender_identity')->nullable();
             $table->string('phone')->nullable();
             $table->string('role')->default('seeker');
             $table->rememberToken();

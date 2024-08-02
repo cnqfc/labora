@@ -4,11 +4,12 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Enums\DocumentType;
 use App\Enums\UserRole;
+use App\Enums\DocumentType;
+use App\Enums\GenderIdentity;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
@@ -26,6 +27,7 @@ class User extends Authenticatable
         'phone',
         'document',
         'document_type',
+        'gender_identity',
         'role',
     ];
 
@@ -37,6 +39,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+
     ];
 
     /**
@@ -51,6 +54,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'role' => UserRole::class,
             'document_type' => DocumentType::class,
+            'gender_identity' => GenderIdentity::class,
         ];
     }
 }
